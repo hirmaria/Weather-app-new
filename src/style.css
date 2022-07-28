@@ -8,9 +8,13 @@
 }
 h1,
 .temp-box {
-  font-size: 50px;
+  font-size: 44px;
   font-weight: 700;
   color: #488db5d9;
+}
+.temp-box {
+  position: relative;
+  top: -20px;
 }
 ul,
 li {
@@ -20,9 +24,9 @@ li {
   line-height: 18px;
 }
 .unit {
-  font-size: 14px;
+  font-size: 16px;
   position: relative;
-  top: -20px;
+  top: -40px;
   color: #488db5d9;
   font-weight: 700;
 }
