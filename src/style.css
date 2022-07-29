@@ -10,7 +10,7 @@ h1,
 .temp-box {
   font-size: 44px;
   font-weight: 700;
-  color: #488db5d9;
+  color: #6c757d;
 }
 .temp-box {
   position: relative;
@@ -27,7 +27,7 @@ li {
   font-size: 16px;
   position: relative;
   top: -40px;
-  color: #488db5d9;
+  color: #6c757d;
   font-weight: 700;
 }
 

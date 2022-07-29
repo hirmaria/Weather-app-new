@@ -25,7 +25,7 @@ function showTemperature(response) {
 }
 
 let apiKey = "5cd3854388db274e217fd69a4769c1e5";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Braunschweig&appid=${apiKey}&units=metric`;
 
 axios(apiUrl).then(showTemperature);
 
