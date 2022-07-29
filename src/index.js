@@ -15,6 +15,13 @@ function showTemperature(response) {
 
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].main;
+
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let apiKey = "5cd3854388db274e217fd69a4769c1e5";
@@ -49,8 +56,6 @@ let months = [
 ];
 
 let day = document.querySelector("#day");
-day.innerHTML = days[now.getDay()];
-
 let month = months[now.getMonth()];
 let date = now.getDate();
 let hour = now.getHours();
@@ -61,8 +66,8 @@ let minute = now.getMinutes();
 if (minute < 10) {
   minute = "0" + minute;
 }
-
 let sentence = month + ", " + date + " " + hour + ":" + minute;
-
 let currentDate = document.querySelector("#date");
+
+day.innerHTML = days[now.getDay()];
 currentDate.innerHTML = sentence;
