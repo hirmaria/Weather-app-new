@@ -53,8 +53,8 @@ form.addEventListener("submit", searchCity);
 
 //if getting geolocation
 
-//let getGeo = document.querySelector("#getGeo");
-//getGeo.addEventListener("click", searchGeo);
+let getGeo = document.querySelector("#getGeo");
+getGeo.addEventListener("click", searchGeo);
 
 //date
 let now = new Date();
@@ -98,3 +98,20 @@ let currentDate = document.querySelector("#date");
 
 day.innerHTML = days[now.getDay()];
 currentDate.innerHTML = sentence;
+
+//unit conversion
+
+function showCelsius(event) {
+  event.preventDefault();
+  let tempCelsius = document.querySelector("#temp");
+  tempCelsius.innerHTML = Math.round();
+}
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", showCelsius);
+
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", showFahrenheit);
+
+//*1.8+32
+//-32)/1.8
