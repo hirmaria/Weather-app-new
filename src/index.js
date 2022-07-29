@@ -24,10 +24,37 @@ function showTemperature(response) {
   );
 }
 
+//search engine
 let apiKey = "5cd3854388db274e217fd69a4769c1e5";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Braunschweig&appid=${apiKey}&units=metric`;
 
-axios(apiUrl).then(showTemperature);
+function searchCity(event) {
+  event.preventDefault();
+  let city = document.querySelector("#searchingCity");
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=metric`;
+  axios(apiUrl).then(showTemperature);
+}
+
+function handlePosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios(apiUrl).then(showTemperature);
+}
+
+function searchGeo(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(handlePosition);
+}
+
+//if searching the city
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
+
+//if getting geolocation
+
+//let getGeo = document.querySelector("#getGeo");
+//getGeo.addEventListener("click", searchGeo);
 
 //date
 let now = new Date();

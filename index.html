@@ -18,22 +18,30 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <div class="input-group">
+        <form class="input-group" id="search-form">
           <input
-            type="text"
+            type="search"
             class="form-control"
-            placeholder="Recipient's username"
+            placeholder="Enter your city"
+            id="searchingCity"
             aria-label="Recipient's username with two button addons"
           />
-          <button class="btn btn-outline-secondary" type="button">
-            Button
-          </button>
-          <button class="btn btn-outline-secondary" type="button">
-            Button
-          </button>
-        </div>
+          <input
+            class="btn btn-outline-secondary button"
+            type="submit"
+            value="Search"
+          />
 
-        <h1 id="city"></h1>
+          <button
+            class="btn btn-outline-secondary button"
+            type="button"
+            id="getGeo"
+          >
+            Your location
+          </button>
+        </form>
+
+        <h1 id="city">Kyiv,</h1>
         <ul>
           <li id="date"></li>
           <li id="day"></li>

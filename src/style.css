@@ -38,3 +38,10 @@ small {
   opacity: 0.8;
   font-size: 12px;
 }
+
+.input-group {
+  margin-bottom: 20px;
+}
+.button {
+  width: 120px;
+}
