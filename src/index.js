@@ -1,8 +1,10 @@
 //weather
+let celsiusTemperature = null;
 
-function showTemperature(response) {
+function showData(response) {
   let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  tempElement.innerHTML = Math.round(celsiusTemperature);
 
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.main.humidity;
@@ -31,14 +33,14 @@ function searchCity(event) {
   event.preventDefault();
   let city = document.querySelector("#searchingCity");
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=metric`;
-  axios(apiUrl).then(showTemperature);
+  axios(apiUrl).then(showData);
 }
 
 function handlePosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  axios(apiUrl).then(showTemperature);
+  axios(apiUrl).then(showData);
 }
 
 function searchGeo(event) {
@@ -104,7 +106,17 @@ currentDate.innerHTML = sentence;
 function showCelsius(event) {
   event.preventDefault();
   let tempCelsius = document.querySelector("#temp");
-  tempCelsius.innerHTML = Math.round();
+  tempCelsius.innerHTML = Math.round(celsiusTemperature);
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+}
+
+function showFahrenheit(event) {
+  event.preventDefault();
+  let tempFahrenheit = document.querySelector("#temp");
+  tempFahrenheit.innerHTML = Math.round(celsiusTemperature * 1.8 + 32);
+  fahrenheit.classList.add("active");
+  celsius.classList.remove("active");
 }
 
 let celsius = document.querySelector("#celsius");
