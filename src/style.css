@@ -50,3 +50,17 @@ small {
   color: #6c757d;
   text-decoration: none;
 }
+.weather-forecast {
+  text-align: center;
+}
+
+.weater-forecast-date {
+  font-size: 16px;
+  opacity: 0.8;
+}
+.weather-forecast-temperature {
+  font-size: 13px;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.8;
+}
