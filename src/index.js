@@ -30,11 +30,14 @@ function showData(response) {
 //search engine
 let apiKey = "5cd3854388db274e217fd69a4769c1e5";
 
+function search(city) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios(apiUrl).then(showData);
+}
 function searchCity(event) {
   event.preventDefault();
-  let city = document.querySelector("#searchingCity");
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=metric`;
-  axios(apiUrl).then(showData);
+  let cityElement = document.querySelector("#searchingCity");
+  search(cityElement.value);
 }
 
 function handlePosition(position) {
@@ -128,3 +131,4 @@ fahrenheit.addEventListener("click", showFahrenheit);
 
 //*1.8+32
 //-32)/1.8
+search("Kyiv");
