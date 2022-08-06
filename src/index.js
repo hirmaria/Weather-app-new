@@ -24,7 +24,6 @@ function showData(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  console.log(response.data);
 }
 
 //search engine
@@ -132,3 +131,34 @@ fahrenheit.addEventListener("click", showFahrenheit);
 //*1.8+32
 //-32)/1.8
 search("Kyiv");
+
+//forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+<div class="col-2">
+          <div class="weater-forecast-date">${day}</div>
+          <img
+            src="http://openweathermap.org/img/wn/01d@2x.png"
+            alt="."
+            width="42px"
+          />
+          <div class="weather-forecast-temperature">
+            <span class="weather-forecast-temperature-max">18°</span>
+            <span class="weather-forecast-temperature-min">12°</span>
+          </div>
+        </div>
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
