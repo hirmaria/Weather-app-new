@@ -160,28 +160,6 @@ currentDate.innerHTML = sentence;
 
 //unit conversion
 
-function showCelsius(event) {
-  event.preventDefault();
-  let tempCelsius = document.querySelector("#temp");
-  tempCelsius.innerHTML = Math.round(celsiusTemperature);
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
-}
-
-function showFahrenheit(event) {
-  event.preventDefault();
-  let tempFahrenheit = document.querySelector("#temp");
-  tempFahrenheit.innerHTML = Math.round(celsiusTemperature * 1.8 + 32);
-  fahrenheit.classList.add("active");
-  celsius.classList.remove("active");
-}
-
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", showCelsius);
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", showFahrenheit);
-
 //*1.8+32
 //-32)/1.8
 search("Kyiv");
